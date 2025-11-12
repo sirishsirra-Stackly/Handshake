@@ -11,23 +11,6 @@ body {
   background-color: #f9f9f9;
   color: #333;
 }
-.handshake {
-  text-align: center;
-  padding: 80px 20px;
-  background-color: #ffffff;
-}
-
-.handshake h2 {
-  color: #004aad;
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-.handshake p {
-  margin-top: 15px;
-  color: #555;
-  font-size: 18px;
-}
 
 /* Navbar */
 .navbar {
@@ -101,6 +84,7 @@ body {
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 40px;
+  border-radius: 10px;
 }
 
 .hero h1 {
@@ -116,28 +100,70 @@ body {
   color: #f1c40f;
 }
 
-.handshake-container {
+/* 🤝 Handshake Section with Background Animation */
+.handshake {
+  position: relative;
   text-align: center;
-  margin: 40px 0;
+  padding: 120px 20px;
+  color: white;
+  overflow: hidden;
 }
+
+/* Add a handshake image or animation as background */
+.handshake::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://cdn.dribbble.com/userupload/42247276/file/original-700e15a4701f90089affaa0df2bafc09.gif') 
+              no-repeat center center/cover;
+  opacity: 0.25; /* keeps animation visible but subtle */
+  z-index: 0;
+}
+
+.handshake h2,
+.handshake p,
+lottie-player {
+  position: relative;
+  z-index: 2;
+}
+
+.handshake h2 {
+  color: #004aad;
+  font-size: 32px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.handshake p {
+  margin-top: 20px;
+  color: #222;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.75);
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 6px;
+}
+
+/* Handshake Animation Container */
+.handshake-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
 .shake-img {
   width: 300px;
   animation: handshakeMotion 2s infinite ease-in-out;
 }
+
 @keyframes handshakeMotion {
-  0%,100% { transform: translateX(0) scale(1); }
+  0%, 100% { transform: translateX(0) scale(1); }
   50% { transform: translateX(8px) scale(1.02); }
-}
-}
-
-@keyframes shake {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.handshake p {
-  margin-top: 15px;
-  color: #555;
 }
 
 /* Services Section */
@@ -207,16 +233,15 @@ footer {
     gap: 10px;
   }
 
-  .service-gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .hero h1 {
     font-size: 32px;
   }
 
-  .handshake img {
+  .shake-img {
     width: 200px;
+  }
+
+  .handshake {
+    padding: 80px 10px;
   }
 }
