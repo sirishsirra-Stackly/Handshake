@@ -1,247 +1,47 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body */
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #004aad;
-  padding: 15px 50px;
-  color: white;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  width: 45px;
-  height: 45px;
-}
-
-.menu ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-.menu ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.menu ul li a:hover {
-  color: #f1c40f;
-}
-
-.click-btn {
-  background-color: #f1c40f;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.click-btn:hover {
-  background-color: #e67e22;
-}
-
-/* Hero Section */
-.hero {
-  background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80') 
-              no-repeat center center/cover;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  position: relative;
-}
-
-.overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 40px;
-  border-radius: 10px;
-}
-
-.hero h1 {
-  font-size: 50px;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 20px;
-}
-
-.highlight {
-  color: #f1c40f;
-}
-
-/* 🤝 Handshake Section with Background Animation */
-.handshake {
-  position: relative;
-  text-align: center;
-  padding: 120px 20px;
-  color: white;
-  overflow: hidden;
-}
-
-/* Add a handshake image or animation as background */
-.handshake::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('https://cdn.dribbble.com/userupload/42247276/file/original-700e15a4701f90089affaa0df2bafc09.gif') 
-              no-repeat center center/cover;
-  opacity: 0.25; /* keeps animation visible but subtle */
-  z-index: 0;
-}
-
-.handshake h2,
-.handshake p,
-lottie-player {
-  position: relative;
-  z-index: 2;
-}
-
-.handshake h2 {
-  color: #004aad;
-  font-size: 32px;
-  margin-bottom: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 8px;
-}
-
-.handshake p {
-  margin-top: 20px;
-  color: #222;
-  font-size: 18px;
-  background-color: rgba(255, 255, 255, 0.75);
-  display: inline-block;
-  padding: 10px 16px;
-  border-radius: 6px;
-}
-
-/* Handshake Animation Container */
-.handshake-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  position: relative;
-}
-
-.shake-img {
-  width: 300px;
-  animation: handshakeMotion 2s infinite ease-in-out;
-}
-
-@keyframes handshakeMotion {
-  0%, 100% { transform: translateX(0) scale(1); }
-  50% { transform: translateX(8px) scale(1.02); }
-}
-
-/* Services Section */
-.services {
-  background-color: #f4f4f9;
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.services h2 {
-  color: #004aad;
-  font-size: 30px;
-  margin-bottom: 40px;
-}
-
-.service-gallery {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.service-card {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-.service-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.service-card h3 {
-  padding: 15px;
-  color: #333;
-}
-
-/* Footer */
-footer {
-  background-color: #004aad;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  margin-top: 40px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
+<style>
+  .clients-section {
     text-align: center;
+    padding: 80px 0;
+    background: #fff;
+    overflow: hidden;
   }
 
-  .menu ul {
-    flex-direction: column;
-    gap: 10px;
+  .clients-title {
+    font-size: 5em;
+    font-weight: bold;
+    margin-bottom: 60px;
+    color: #222;
   }
 
-  .hero h1 {
-    font-size: 32px;
+  .clients-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
   }
 
-  .shake-img {
-    width: 200px;
+  .clients-track {
+    display: flex;
+    width: calc(250px * 16); /* approximate width based on image size and count */
+    animation: scroll 30s linear infinite;
   }
 
-  .handshake {
-    padding: 80px 10px;
+  .clients-track img {
+    height: 80px;
+    margin: 0 40px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
   }
-}
+
+  .clients-track img:hover {
+    transform: scale(1.1);
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
